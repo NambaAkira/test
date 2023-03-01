@@ -6,5 +6,5 @@ func main() {
 	str := "hello world"
 
 	fmt.Print(str, "\n")
-	fmt.Print("HELLO WORLD")
+	fmt.Print("hello WORLD")
 }
