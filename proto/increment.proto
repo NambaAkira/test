@@ -1,0 +1,15 @@
+syntax = "proto3";
+package increment;
+
+message IncrementRequest {
+    int32 number = 1;
+}
+
+message IncrementResponse {
+    int32 number = 1;
+}
+
+service IncrementService {
+    rpc Increment (IncrementRequest) 
+        returns (IncrementResponse);
+}
