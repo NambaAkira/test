@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Int int
 
@@ -37,6 +39,10 @@ func main() {
 	fmt.Println(n)
 	n.Inc()
 	fmt.Println(n)
+
+	a := 2
+	b := 3
+	fmt.Println(sum.sum(a, b))
 
 	/*
 		user := Person{"yuta"}

@@ -42,6 +42,8 @@ func main() {
 	s := grpc.NewServer()
 
 	// 3. gRPCサーバーにGreetingServiceを登録
+	//第一引数に2のs,第二引数にはhelloメソッドとmustEmbedUnimplementedGreetingServiceServerメソッドを持つ
+	//インターフェースや構造体が必要。myserver構造体を用意
 	hellopb.RegisterGreetingServiceServer(s, NewMyServer())
 
 	// 4. 作成したgRPCサーバーを、8080番ポートで稼働させる
@@ -50,7 +52,7 @@ func main() {
 		s.Serve(listener)
 	}()
 
-	// 4.Ctrl+Cが入力されたらGraceful shutdownされるようにする
+	// 5.Ctrl+Cが入力されたらGraceful shutdownされるようにする
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, os.Interrupt)
 	<-quit
