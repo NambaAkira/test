@@ -39,7 +39,18 @@ func main() {
 	}
 
 	// 2. gRPCサーバーを作成
+	//s := grpc.NewServer(service.PrometheusInterceptor())
 	s := grpc.NewServer()
+
+	// Create Prometheus HTTP handler.
+	//http.Handle("/metrics", promhttp.Handler())
+
+	// Start Prometheus HTTP server.
+	/*
+		if err := http.ListenAndServe(":8080", nil); err != nil {
+			log.Fatalf("failed to start Prometheus HTTP server: %v", err)
+		}
+	*/
 
 	// 3. gRPCサーバーにGreetingServiceを登録
 	//第一引数に2のs,第二引数にはhelloメソッドとmustEmbedUnimplementedGreetingServiceServerメソッドを持つ
@@ -59,3 +70,5 @@ func main() {
 	log.Println("stopping gRPC server...")
 	s.GracefulStop()
 }
+
+// tmp
