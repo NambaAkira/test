@@ -71,7 +71,7 @@ func Hello() {
 	}
 	res, err := client.Hello(context.Background(), req)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("here:", err)
 	} else {
 		fmt.Println(res.GetMessage())
 	}

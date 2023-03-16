@@ -1,5 +1,12 @@
-package tmp
+package tmp1
 
-func sum(a int, b int) int {
+import "fmt"
+
+func Sum(a int, b int) int {
 	return a + b
+}
+
+func main() {
+	fmt.Println("empty")
+
 }
